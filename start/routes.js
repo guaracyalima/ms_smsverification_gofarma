@@ -21,3 +21,4 @@ Route.get('/', ({ request }) => {
 
 
 Route.post('/access', 'SmsTokenController.access')
+Route.post('/verify_token', 'SmsTokenController.verify_token')

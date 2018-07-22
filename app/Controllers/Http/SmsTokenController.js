@@ -36,6 +36,12 @@ class SmsTokenController {
       return created
 
   }
+
+  async verify_token({ request }) {
+    const { code } = request.all();
+    let verification = SmsToken.query().where('token', '=', code).getCount();
+    return verification;
+  }
 }
 
 module.exports = SmsTokenController
